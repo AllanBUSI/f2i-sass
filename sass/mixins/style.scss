@@ -1,0 +1,39 @@
+
+
+
+
+@keyframes Speed {
+    from {
+        margin-left: 90%;
+        transform: rotate(-3000deg);
+    } to {
+        margin-left: 10%;
+        transform: rotate(3000deg);
+    }
+}
+
+
+@mixin EachMixin($sizes, $couleur, $speed: 10s, $i, $r, $g, $b) {
+    @each $a in $b {
+        @each $j in $g {
+            @each $c in $r {
+                @each $size in $sizes {
+                    .a-#{$size}-#{$c}-#{$j}-#{$a} {
+                        width: $size;
+                        height: $size;
+                        border-radius: calc($size/2);
+                        animation: Speed $speed infinite alternate-reverse;
+                        @if $couleur == false {
+                            background-color: $red;
+                        } 
+                        @else {
+                            background-color: rgb($c,$j,$a);
+                        }
+                    }
+                }
+                $speed: $speed+$i
+            }
+        }
+    }
+}
+
