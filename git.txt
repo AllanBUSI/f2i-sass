@@ -1,0 +1,9 @@
+git remote add origin [lien de ton repo]
+
+git add * [ajouter tout les fichier]
+
+git commit -m [ton message]
+
+git push origin main [pour envoyer de ton local et ton repository github]
+
+git branch [nom de ta branch]
